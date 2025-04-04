@@ -1,0 +1,26 @@
+# Core dependencies
+pandas>=2.0.0
+python-dotenv>=0.21.0
+tqdm>=4.64.0
+
+# Vector database and embeddings
+chromadb>=0.4.18
+sentence-transformers>=2.2.0
+huggingface-hub>=0.12.0
+numpy>=1.24.0
+transformers>=4.29.0
+tokenizers>=0.13.3
+
+# LLM APIs
+anthropic>=0.6.0
+openai>=1.0.0
+google-generativeai>=0.3.0
+
+# Async and HTTP
+aiohttp>=3.8.0
+asyncio>=3.4.3
+
+# Utilities
+jupyter>=1.0.0
+matplotlib>=3.7.0
+plotly>=5.13.0

@@ -1,0 +1,9 @@
+Analyze the provided documentation and chat conversations to identify common technical issues and challenges that users are facing. Create a structured report that:
+
+1. Lists the top 5-7 technical issues based on frequency and severity
+2. Provides a brief description of each issue
+3. Includes specific error messages or symptoms when available
+4. Suggests potential solutions or workarounds for each issue
+5. Recommends documentation improvements that could help prevent these issues
+
+Focus on actionable insights that would be valuable for product managers, support teams, and documentation writers to improve the user experience.

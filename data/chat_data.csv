@@ -1,0 +1,35 @@
+timestamp,username,message,topic
+2025-04-01T10:15:00,user123,"Hello everyone! Just installed the monitoring dashboard but I can't find my node. Any ideas?",support
+2025-04-01T10:17:30,helper456,"@user123 You need to look for your node ID in the dashboard. It should be listed under 'Active Nodes'",support
+2025-04-01T10:20:45,user123,"@helper456 I checked there, but I see multiple nodes. How do I know which one is mine?",support
+2025-04-01T10:22:15,helper456,"Your node ID is shown in your config file, usually in ~/.config/myapp/config.yaml. Look for the 'node_id' field and match it with what you see in the dashboard.",support
+2025-04-01T10:25:30,user123,"Found it! Thanks for the help. One more question - is there a way to rename my node to something more recognizable?",support
+2025-04-01T10:27:00,helper456,"Yes, you can rename your node in the dashboard. Click on your node, then select the 'Edit' option and change the display name.",support
+2025-04-01T11:05:20,user789,"Is anyone else having trouble with API rate limits? I'm getting 'Too many requests' errors.",technical
+2025-04-01T11:07:45,admin001,"@user789 We've increased the rate limits recently. Make sure you're using the latest client library (v2.3+) which handles rate limiting better.",technical
+2025-04-01T11:10:30,user789,"I'm on v2.1, that explains it. Will upgrade now, thanks!",technical
+2025-04-01T12:30:15,newuser456,"How do I get started with the documentation? There's so much information, not sure where to begin.",general
+2025-04-01T12:32:40,helper456,"@newuser456 I'd recommend starting with the 'Getting Started' guide in the docs. Then move on to the 'Basic Concepts' section before diving into specific features.",general
+2025-04-01T13:45:10,user234,"Just deployed my first node to production! The monitoring looks great.",announcements
+2025-04-01T14:20:35,user567,"Having trouble with SSL certificates. Getting 'certificate validation failed' errors when connecting to the dashboard.",technical
+2025-04-01T14:23:50,admin001,"@user567 What version of OpenSSL are you using? We require 1.1.1 or newer.",technical
+2025-04-01T14:25:15,user567,"I'm on 1.0.2, that's probably the issue. Will upgrade and try again.",technical
+2025-04-01T14:30:00,admin001,"Let us know if that resolves it. If not, check the certificate path in your config file.",technical
+2025-04-01T15:10:25,newuser789,"In the monitoring dashboard, can I set up alerts for when my node goes offline?",features
+2025-04-01T15:12:40,helper456,"@newuser789 Yes, click on the 'Alerts' tab, then 'Add Alert'. Select 'Node Status' as the metric and 'Offline' as the condition.",features
+2025-04-01T15:15:10,newuser789,"Found it, thanks! Is there a way to get these alerts via SMS instead of just email?",features
+2025-04-01T15:17:30,admin001,"SMS alerts are coming in the next release (about 2 weeks). For now, you can use the webhook integration with a third-party SMS service if you need that functionality.",features
+2025-04-01T16:05:45,user123,"My node keeps crashing with 'Out of memory' errors. I have 4GB RAM allocated, is that not enough?",technical
+2025-04-01T16:08:20,admin001,"@user123 For the standard configuration, 4GB should be sufficient. Check if you have the 'extended-metrics' option enabled in your config. That can increase memory usage significantly.",technical
+2025-04-01T16:10:50,user123,"Ah, I do have that enabled. I'll either disable it or increase the RAM. Thanks!",technical
+2025-04-01T17:30:15,newbie101,"Just joined the project! Looking forward to learning and contributing.",general
+2025-04-01T17:32:30,admin001,"Welcome @newbie101! Be sure to check out our onboarding documentation. Let us know if you have any questions.",general
+2025-04-01T18:20:45,user456,"Is there any way to export monitoring data to CSV or JSON? I'd like to do some custom analysis.",features
+2025-04-01T18:22:15,helper789,"@user456 Yes, on the dashboard, click the gear icon at the top-right then 'Export Data'. You can choose CSV, JSON, or Excel formats.",features
+2025-04-01T18:25:00,user456,"Perfect, thank you!",features
+2025-04-01T19:10:30,user890,"Is the monitoring dashboard open source? I'd like to contribute some improvements.",community
+2025-04-01T19:12:50,admin001,"@user890 Yes, it's all on GitHub! Check out github.com/ourproject/monitoring-dashboard. We welcome contributions - there's a CONTRIBUTING.md file with guidelines.",community
+2025-04-01T19:15:20,user890,"Excellent, I'll take a look and maybe submit a PR soon.",community
+2025-04-01T20:05:10,user234,"Quick question: how frequently does the monitoring dashboard refresh data? Mine seems stuck.",technical
+2025-04-01T20:07:35,helper456,"@user234 By default it's every 60 seconds. You can change this in Settings > Refresh Rate. If it's stuck, try clearing your browser cache or doing a hard refresh (Ctrl+F5).",technical
+2025-04-01T20:10:15,user234,"Hard refresh worked, thanks!",technical

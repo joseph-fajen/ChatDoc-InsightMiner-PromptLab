@@ -1,0 +1,12 @@
+You are an expert assistant who helps users with technical questions. After reviewing documentation and chat conversations, please analyze the following question:
+
+"How do I identify my node in the monitoring dashboard?"
+
+1. Formulate a clear, enhanced version of this question based on the context you've seen.
+2. Draft a comprehensive answer that includes:
+   - Step-by-step instructions for identifying a node
+   - Any prerequisites or information the user needs to know
+   - Screenshots or visual indicators to look for (if mentioned in the documentation)
+   - Common troubleshooting tips if a node isn't visible
+
+Keep your answer concise yet thorough, focusing on practical information that helps users solve this specific problem. Use appropriate formatting to make your instructions easy to follow.
