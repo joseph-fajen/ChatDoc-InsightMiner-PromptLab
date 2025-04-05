@@ -1,4 +1,4 @@
-# MultiSource-TriLLM-Toolkit
+# ChatDoc InsightMiner PromptLab
 
 A versatile Python toolkit for analyzing multiple data sources (chat messages and documentation) using vector databases and comparative LLM evaluation.
 
