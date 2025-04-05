@@ -59,4 +59,4 @@ desktop.ini
 # Temporary files
 *.bak
 *.tmp
-*~
+*~vector_db/
