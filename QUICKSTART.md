@@ -1,6 +1,6 @@
-# MultiSource-TriLLM-Toolkit Quick Start Guide
+# ChatDoc InsightMiner PromptLab Quick Start Guide
 
-This guide will help you get started with the MultiSource-TriLLM-Toolkit, a versatile system for analyzing multiple data sources (chat messages and documentation) using vector databases and comparative LLM evaluation.
+This guide will help you get started with the ChatDoc InsightMiner PromptLab, a versatile system for analyzing multiple data sources (chat messages and documentation) using vector databases and comparative LLM evaluation.
 
 ## Prerequisites
 
@@ -73,16 +73,30 @@ python scripts/toolkit.py docs
 
 ### 3. Run Analysis with a Prompt
 
-Run an analysis using multiple LLMs:
+Choose from the various prompt types based on your analysis needs:
 
+#### Analysis Prompts
+For general analytical insights:
 ```bash
 python scripts/toolkit.py analyze --prompt prompts/analysis_prompts/technical_issues.txt
 ```
 
-Answer specific questions using the combined data sources:
-
+#### Creative Discovery Prompts
+For deeper, more exploratory analysis:
 ```bash
-python scripts/toolkit.py analyze --prompt prompts/question_prompts/identify_node.txt
+python scripts/toolkit.py analyze --prompt prompts/creative_discovery_prompts/knowledge_graph_extraction.txt
+```
+
+#### FAQ Generation
+To create comprehensive FAQs from conversations:
+```bash
+python scripts/toolkit.py analyze --prompt prompts/faq_prompts/faq_creator.txt
+```
+
+#### Specific Questions
+For targeted, precise answers:
+```bash
+python scripts/toolkit.py analyze --prompt prompts/prompt_for_specific_question/identify_node.txt
 ```
 
 ### 4. Examine Results
@@ -104,16 +118,25 @@ Replace `openai` with `anthropic` or `gemini` depending on which API key you hav
 
 ## Custom Prompts
 
-You can create your own prompt templates in the `prompts/` directory:
-- Use `prompts/analysis_prompts/` for general analysis tasks
-- Use `prompts/question_prompts/` for specific questions
+You can create your own prompt templates in the following directories based on your needs:
+
+- **Analysis Prompts**: `prompts/analysis_prompts/` for general analysis tasks
+- **Creative Discovery**: `prompts/creative_discovery_prompts/` for exploratory analysis
+- **FAQ Generation**: `prompts/faq_prompts/` for creating documentation
+- **Specific Questions**: `prompts/prompt_for_specific_question/` for targeted inquiries
+
+When creating prompts, use the `{conversations}` placeholder to reference the retrieved content from the vector database.
 
 ## Batch Processing
 
 To run multiple prompts in sequence:
 
 ```bash
+# Run all analysis prompts
 python scripts/toolkit.py analyze --batch --prompts-dir prompts/analysis_prompts
+
+# Run all creative discovery prompts
+python scripts/toolkit.py analyze --batch --prompts-dir prompts/creative_discovery_prompts
 ```
 
 ## Run the Complete Demo
