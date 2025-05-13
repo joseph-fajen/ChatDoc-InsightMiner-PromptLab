@@ -1,0 +1,32 @@
+The following are Discord chat conversations from the Blockfrost community:
+
+{conversations}
+
+Create a comprehensive technical issues map based on these conversations:
+
+1. Identify all technical issues, bugs, or errors mentioned
+2. For each issue:
+   - Provide a short descriptive title
+   - Classify the severity (Critical, High, Medium, Low)
+   - Describe the symptoms and user impact
+   - Note the affected components or features
+   - Document any workarounds or solutions offered
+   - Track how many users reported the same or similar issues
+
+3. Group issues by category:
+   - API functionality issues
+   - Configuration problems
+   - Documentation gaps
+   - Integration challenges
+   - Performance concerns
+   - Security questions
+
+4. Prioritize issues based on:
+   - Frequency of mentions
+   - User impact severity
+   - Whether solutions exist
+   - Business impact
+
+5. Create a "Top 5 Technical Priorities" list that would have the greatest positive impact if addressed
+
+Present the results as a structured technical report that could be used by engineering teams to prioritize fixes.

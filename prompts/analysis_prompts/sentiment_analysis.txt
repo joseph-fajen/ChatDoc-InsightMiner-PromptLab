@@ -1,0 +1,25 @@
+The following are Discord chat conversations from the Blockfrost community:
+
+{conversations}
+
+Conduct a detailed sentiment analysis of these conversations focusing on the following aspects:
+
+1. Overall community sentiment toward Blockfrost services and the Icebreakers program
+2. Sentiment trends over time (if any patterns are visible)
+3. Sentiment analysis by topic area:
+   - API functionality and performance
+   - Documentation and support
+   - Icebreakers program
+   - Specific features mentioned
+
+4. Emotional analysis:
+   - Identify expressions of frustration, confusion, satisfaction, or excitement
+   - Highlight particularly positive or negative interactions
+   - Note any shifts in user emotions through the conversation flow
+
+5. Contextual factors:
+   - Response time impacts on sentiment
+   - Technical complexity correlation with sentiment
+   - Support interactions and their effect on user satisfaction
+
+Provide quantitative metrics where possible (e.g., percentage of positive vs. negative comments) and qualitative insights into the emotional tone of the community.

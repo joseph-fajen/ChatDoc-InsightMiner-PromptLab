@@ -1,0 +1,33 @@
+The following are Discord chat conversations from the Blockfrost community:
+
+{conversations}
+
+Conduct a comprehensive feature demand analysis based on these conversations:
+
+1. Feature Request Identification:
+   - Extract explicit feature requests from users
+   - Identify implicit needs based on problems users are trying to solve
+   - Note workarounds users are implementing that suggest missing features
+
+2. Feature Prioritization Framework:
+   - Quantify mentions and interest in each potential feature
+   - Assess business impact and technical feasibility based on context
+   - Evaluate alignment with apparent product direction
+   - Consider competitive differentiation possibilities
+
+3. User Need Classification:
+   - Categorize underlying user needs behind feature requests
+   - Map how different user segments express varying needs
+   - Identify patterns in how needs are articulated
+
+4. Feature Specification Outlines:
+   - For top requested features, provide detailed specification outlines
+   - Include potential use cases, user stories, and implementation considerations
+   - Note integration points with existing functionality
+
+5. Competitive Gap Analysis:
+   - Identify mentions of competitive alternatives
+   - Note features users compare against other solutions
+   - Highlight unique value propositions and potential differentiation
+
+Compile this analysis into a product planning document that could guide feature development priorities.

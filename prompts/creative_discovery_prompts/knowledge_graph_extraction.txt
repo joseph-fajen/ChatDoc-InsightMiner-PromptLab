@@ -1,0 +1,40 @@
+The following are Discord chat conversations from the Blockfrost community:
+
+{conversations}
+
+Analyze these conversations to construct a comprehensive knowledge graph of Blockfrost's technical domain:
+
+1. Entity Extraction:
+   - Identify all technical entities mentioned (APIs, features, components, concepts)
+   - Extract named tools, technologies, and integrations
+   - Identify people, roles, and organizational elements
+
+2. Relationship Mapping:
+   - Map relationships between entities (X is part of Y, A depends on B, etc.)
+   - Identify hierarchical structures and dependencies
+   - Map compatibility and integration relationships
+   - Note causal relationships (X causes Y, changing A affects B)
+
+3. Attribute Extraction:
+   - For each entity, extract mentioned attributes and properties
+   - Note status information (working, broken, deprecated, etc.)
+   - Identify configuration options and parameters
+   - Extract performance characteristics and limitations
+
+4. Process Extraction:
+   - Map workflows and processes mentioned
+   - Identify sequential steps and dependencies
+   - Note decision points and condition branches
+   - Extract typical usage patterns and best practices
+
+5. Problem-Solution Pairing:
+   - Link described problems to their solutions
+   - Map errors to their causes and resolutions
+   - Connect use cases to implementation approaches
+
+6. Knowledge Gaps:
+   - Identify areas where relationships are unclear or contradictory
+   - Note questions that remained unanswered
+   - Highlight ambiguities in the technical domain model
+
+Present this knowledge graph in a structured format that could serve as the foundation for a comprehensive technical documentation knowledge base.

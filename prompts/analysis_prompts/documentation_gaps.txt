@@ -1,0 +1,34 @@
+The following are Discord chat conversations from the Blockfrost community:
+
+{conversations}
+
+Analyze these conversations to identify gaps and improvement opportunities in Blockfrost's documentation:
+
+1. Documentation Gap Analysis:
+   - Identify topics, features, or processes that users frequently ask questions about
+   - Highlight areas where users express confusion despite existing documentation
+   - Note any explicit mentions of missing, unclear, or outdated documentation
+   - Identify terminology confusion or inconsistencies
+
+2. Documentation Prioritization:
+   - Rank documentation gaps by frequency of mentions
+   - Prioritize based on impact on user experience
+   - Identify the most critical missing documentation components
+
+3. Content Recommendations:
+   - For each identified gap, suggest specific content that should be created
+   - Recommend documentation formats most appropriate for each topic (tutorials, reference docs, FAQs, examples)
+   - Suggest improvements to existing documentation based on user feedback
+   - Identify where code examples, diagrams, or step-by-step guides would be valuable
+
+4. Documentation Structure Insights:
+   - Analyze if users can find information they need
+   - Assess if the documentation organization makes sense to users
+   - Suggest structural improvements to make information more discoverable
+
+5. Documentation Effectiveness Metrics:
+   - How frequently users need to ask questions despite documentation
+   - Areas where documentation successfully prevents support requests
+   - Topics where documentation exists but users still struggle
+
+Present these findings in a format that would be actionable for a documentation team.

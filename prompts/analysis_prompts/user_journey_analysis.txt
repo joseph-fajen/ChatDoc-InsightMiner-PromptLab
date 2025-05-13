@@ -1,0 +1,33 @@
+The following are Discord chat conversations from the Blockfrost community:
+
+{conversations}
+
+Analyze these conversations to map the user journey for Blockfrost users, particularly those participating in the Icebreakers program:
+
+1. Identify distinct stages in the user journey:
+   - Discovery and initial interest
+   - Onboarding process
+   - Setup and configuration
+   - Early usage and challenges
+   - Advanced usage and integration
+   - Troubleshooting and support interactions
+
+2. For each stage in the journey:
+   - Document common questions and confusion points
+   - Identify emotional states (excitement, frustration, satisfaction)
+   - Note key decision points and friction areas
+   - Highlight support interactions and their effectiveness
+
+3. Map user progression patterns:
+   - How users transition between stages
+   - Where users appear to get stuck
+   - Common exit or abandonment points
+   - Successful paths to becoming active contributors
+
+4. Identify opportunities to improve the journey:
+   - Documentation enhancements
+   - UX/UI improvement suggestions
+   - Support process optimizations
+   - Community engagement opportunities
+
+Present this as a narrative journey map that could help product managers understand the full user experience.

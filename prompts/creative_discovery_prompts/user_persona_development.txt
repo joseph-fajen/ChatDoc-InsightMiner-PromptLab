@@ -1,0 +1,37 @@
+The following are Discord chat conversations from the Blockfrost community:
+
+{conversations}
+
+Based on these conversations, develop detailed user personas for the Blockfrost community:
+
+1. Persona Identification:
+   - Identify distinct types of users based on their behavior, questions, and needs
+   - Create 3-5 composite user personas that represent key segments of the community
+
+2. For each persona, develop:
+   - A descriptive name and role (e.g., "Alex the Enterprise Integrator")
+   - Technical background and expertise level
+   - Primary goals and motivations for using Blockfrost
+   - Key pain points and challenges
+   - Typical usage patterns and workflows
+   - Information needs and preferred learning styles
+   - Decision-making factors and priorities
+
+3. Behavioral Analysis:
+   - How each persona typically interacts with the community
+   - Common questions and concerns for each persona
+   - Support needs and preferences
+   - Indicators of success or satisfaction
+
+4. Journey Mapping:
+   - How each persona typically discovers and adopts Blockfrost
+   - Critical touchpoints in their customer journey
+   - Potential exit or frustration points
+   - Opportunities to improve the experience for each persona
+
+5. Design and Development Implications:
+   - How product decisions impact each persona differently
+   - Features and improvements that would most benefit each persona
+   - Documentation and support needs specific to each persona
+
+Present these personas in a format that would help product, marketing, and support teams better understand and serve the community.

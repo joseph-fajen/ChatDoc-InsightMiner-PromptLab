@@ -1,0 +1,37 @@
+The following are Discord chat conversations from the Blockfrost community:
+
+{conversations}
+
+Extract competitive intelligence insights from these conversations:
+
+1. Competitor Identification:
+   - Identify any direct or indirect competitors mentioned
+   - Note how competitors are referenced (positive, negative, comparative)
+   - Track competitor features or capabilities that are discussed
+
+2. Competitive Positioning Analysis:
+   - Analyze how Blockfrost is positioned relative to alternatives
+   - Identify perceived strengths and weaknesses versus competitors
+   - Note unique value propositions and differentiators
+
+3. Market Dynamics:
+   - Extract insights about market trends and shifting demands
+   - Identify emerging use cases and applications
+   - Note changes in user expectations over time
+
+4. Competitive Threat Assessment:
+   - Evaluate mentioned competitive threats and their severity
+   - Identify areas where competitors may have advantages
+   - Note potential defensive strategies or responses
+
+5. Strategic Opportunity Mapping:
+   - Identify unmet needs that represent opportunities
+   - Note potential partnership or integration possibilities
+   - Highlight areas where Blockfrost could strengthen positioning
+
+6. Ecosystem Analysis:
+   - Map how Blockfrost fits into the broader technology ecosystem
+   - Identify integration points and complementary solutions
+   - Note strategic ecosystem relationships and dependencies
+
+Present these findings as a strategic competitive intelligence briefing that could inform business strategy.

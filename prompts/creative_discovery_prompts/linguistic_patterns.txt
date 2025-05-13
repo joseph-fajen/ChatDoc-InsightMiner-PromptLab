@@ -1,0 +1,37 @@
+The following are Discord chat conversations from the Blockfrost community:
+
+{conversations}
+
+Perform a deep linguistic analysis of these conversations to uncover hidden patterns:
+
+1. Terminology Analysis:
+   - Identify specialized terminology and jargon used in the community
+   - Track how technical terms are introduced and adopted
+   - Note variations in terminology usage across different user types
+   - Create a glossary of domain-specific language with contextual definitions
+
+2. Communication Style Patterns:
+   - Analyze formality levels and how they shift based on context
+   - Identify metaphors and analogies used to explain technical concepts
+   - Note humor patterns and their effectiveness in technical communication
+   - Examine question formulation styles and their effectiveness in getting answers
+
+3. Linguistic Markers of Expertise:
+   - Compare language patterns between experts and novices
+   - Identify linguistic features that signal credibility or authority
+   - Note how explanations are adapted for different knowledge levels
+   - Track the evolution of users' language as they gain expertise
+
+4. Emotional Language Analysis:
+   - Map emotional language to technical topics and issues
+   - Identify trigger points that lead to emotional responses
+   - Note how emotional language is addressed by community members
+   - Analyze how emotional states impact problem resolution
+
+5. Conversation Flow Patterns:
+   - Identify typical conversation structures and how they evolve
+   - Analyze turn-taking patterns and response timing effects
+   - Note thread bifurcation and topic evolution patterns
+   - Examine how misunderstandings manifest and are resolved linguistically
+
+Present unexpected insights about how language usage affects community function, technical understanding, and problem resolution in this technical community.
