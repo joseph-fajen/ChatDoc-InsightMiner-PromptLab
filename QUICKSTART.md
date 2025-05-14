@@ -53,9 +53,38 @@ This will verify that all required components are installed and correctly config
 - **Chat Data**: Place your chat data in CSV format in the `data/` directory
   - Required columns: timestamp, username, message
   - Sample file provided: `data/chat_data.csv`
+  - If your data is in markdown format, you can convert it to CSV:
+    ```bash
+    python scripts/toolkit.py md2csv --input yourfile.md --output data/converted_chat_data.csv
+    ```
 
 - **Documentation**: Add your documentation files in Markdown format to the `docs/` directory
   - Sample file provided: `docs/monitoring-dashboard.md`
+
+### 1.1 Converting Markdown Files to CSV
+
+If you have chat data in markdown format (with timestamp and username information), you can easily convert it:
+
+```bash
+# Convert a single markdown file
+python scripts/toolkit.py md2csv --input sample-markdown-file.md --output data/output.csv
+
+# Combine multiple markdown files
+python scripts/toolkit.py md2csv --input file1.md file2.md --output data/combined.csv
+
+# Track which file each message came from
+python scripts/toolkit.py md2csv --input file1.md file2.md --output data/combined.csv --track-source
+```
+
+The markdown files should follow this format:
+```
+Username — MM/DD/YY, HH:MM AM/PM
+Message content here
+
+
+Another Username — MM/DD/YY, HH:MM AM/PM
+Their message content here
+```
 
 ### 2. Build Vector Databases
 

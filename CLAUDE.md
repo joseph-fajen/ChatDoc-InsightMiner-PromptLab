@@ -37,6 +37,19 @@ python scripts/toolkit.py docs
 python scripts/toolkit.py build --force
 ```
 
+### Converting Markdown to CSV
+
+```bash
+# Convert a single markdown file to CSV
+python scripts/toolkit.py md2csv --input sample-markdown-file.md --output data/output.csv
+
+# Convert multiple markdown files to a single CSV
+python scripts/toolkit.py md2csv --input file1.md file2.md --output data/combined.csv
+
+# Track source of each message when combining multiple files
+python scripts/toolkit.py md2csv --input file1.md file2.md --output data/combined.csv --track-source
+```
+
 ### Running Analysis
 
 ```bash

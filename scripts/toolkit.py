@@ -547,6 +547,24 @@ def run_demo(args):
     
     return True
 
+def convert_markdown(args):
+    """Convert markdown file(s) to CSV"""
+    cmd = [sys.executable, "scripts/md_to_csv_converter.py"]
+    
+    cmd.extend(["--input"] + args.input)
+    cmd.extend(["--output", args.output])
+    if args.track_source:
+        cmd.append("--track-source")
+    
+    try:
+        result = subprocess.run(cmd, check=True)
+        print(f"{GREEN}Markdown file(s) converted to CSV successfully!{NC}")
+        return True
+    except subprocess.CalledProcessError as e:
+        logger.error(f"Failed to convert markdown to CSV: {e}")
+        print(f"{RED}Failed to convert markdown to CSV. Check the logs for details.{NC}")
+        return False
+
 def main():
     """Main entry point for the toolkit"""
     parser = argparse.ArgumentParser(
@@ -592,6 +610,15 @@ def main():
                               choices=["openai", "anthropic", "gemini"],
                               help="LLM provider to use")
     
+    # Markdown to CSV conversion command
+    md2csv_parser = subparsers.add_parser("md2csv", help="Convert markdown file(s) to CSV")
+    md2csv_parser.add_argument('--input', type=str, nargs='+', required=True, 
+                             help="Path(s) to input markdown file(s)")
+    md2csv_parser.add_argument('--output', type=str, required=True,
+                             help="Path to output CSV file")
+    md2csv_parser.add_argument('--track-source', action='store_true',
+                             help="Add source column to CSV to track which file each record came from")
+    
     # Demo command
     demo_parser = subparsers.add_parser("demo", help="Run the demo workflow")
     demo_parser.add_argument('--skip-setup', action='store_true', help="Skip setup steps")
@@ -628,6 +655,8 @@ def main():
         success = run_analyzer(args)
     elif args.command == "fallback":
         success = run_single_llm_fallback(args.prompt, args.provider)
+    elif args.command == "md2csv":
+        success = convert_markdown(args)
     elif args.command == "demo":
         success = run_demo(args)
     else:

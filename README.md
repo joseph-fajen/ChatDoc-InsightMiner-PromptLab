@@ -15,6 +15,7 @@ This toolkit allows you to:
 ## Key Features
 
 - **Multiple Data Sources**: Combine chat messages and documentation in a unified vector database
+- **Markdown to CSV Conversion**: Convert chat data from markdown format to CSV for processing
 - **Comparative LLM Analysis**: Query three leading LLMs simultaneously for diverse perspectives
 - **Specialized Prompts**: Use domain-specific prompts for targeted insights
 - **Visualization**: Generate side-by-side comparisons of LLM outputs
@@ -35,6 +36,7 @@ ChatDoc-InsightMiner-PromptLab/
 │   ├── build_vector_db.py      # Build vector DB from chat data
 │   ├── add_docs_to_vector_db.py  # Add documentation to vector DB
 │   ├── multi_llm_combined_analyzer.py  # Query sources with multiple LLMs
+│   ├── md_to_csv_converter.py  # Convert markdown files to CSV format
 │   └── run_demo.py             # Run a complete demo workflow
 ├── data/
 │   └── chat_data.csv           # Sample chat data
@@ -60,6 +62,10 @@ ChatDoc-InsightMiner-PromptLab/
 │   │   └── faq_creator.txt
 │   └── prompt_for_specific_question/  # Targeted question prompts
 │       └── identify_node.txt
+├── tests/                      # Test suite
+│   ├── run_tests.py            # Test runner
+│   ├── test_md_to_csv_converter.py  # Unit tests for conversion
+│   └── test_toolkit_md2csv.py  # Integration tests for CLI
 ├── outputs/                    # Analysis outputs directory
 ├── vector_db/                  # Vector database storage
 └── logs/                       # Log files directory
@@ -152,6 +158,12 @@ python scripts/toolkit.py analyze --prompt prompts/analysis_prompts/technical_is
 # Run with a single LLM (if you don't have all API keys)
 python scripts/toolkit.py fallback --prompt prompts/analysis_prompts/technical_issues.txt --provider openai
 
+# Convert markdown file(s) to CSV
+python scripts/toolkit.py md2csv --input sample-markdown-file.md --output data/output.csv
+
+# Convert multiple markdown files with source tracking
+python scripts/toolkit.py md2csv --input file1.md file2.md --output data/combined.csv --track-source
+
 # Run batch analysis on all prompts in a directory
 python scripts/toolkit.py analyze --batch --prompts-dir prompts/analysis_prompts
 
@@ -214,6 +226,25 @@ If you encounter issues:
 3. Ensure your API keys are correctly set in the `.env` file
 
 4. Verify that your input data (chat data and documentation) is in the correct format
+
+## Testing
+
+The toolkit includes a test suite to validate its functionality:
+
+```bash
+# Run all tests
+python tests/run_tests.py
+
+# Run a specific test file
+python tests/test_md_to_csv_converter.py
+
+# Run a specific test case
+python -m unittest tests.test_md_to_csv_converter.TestMarkdownToCsvConverter.test_single_file_conversion
+```
+
+The test suite includes:
+- Unit tests for the markdown to CSV conversion logic
+- Integration tests for the toolkit command line interface
 
 ## License
 
