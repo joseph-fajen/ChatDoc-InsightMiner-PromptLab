@@ -17,15 +17,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated dependencies in requirements.txt to latest versions
 - Cleaned up unused dependencies in requirements.txt
 
-## [1.0.0] - 2024-05-20
+## [1.0.0] - 2025-05-20
 
 ### Added
-- Apache License 2.0 (added May 19, 2024)
-- Markdown to CSV conversion functionality (added Apr 3, 2024)
-- Sample markdown file for conversion testing (added Apr 3, 2024)
-- CLAUDE.md documentation (added Apr 2, 2024)
-- Expanded set of prompt templates (added Apr 2, 2024)
-- Initial project structure and documentation (Mar 2024)
+- Apache License 2.0 (added May 19, 2025)
+- Markdown to CSV conversion functionality (added Apr 3, 2025)
+- Sample markdown file for conversion testing (added Apr 3, 2025)
+- CLAUDE.md documentation (added Apr 2, 2025)
+- Expanded set of prompt templates (added Apr 2, 2025)
+- Initial project structure and documentation (Mar 2025)
 - Core functionality for processing chat data and documentation
 - Vector database integration for efficient querying
 - Multiple LLM provider support (OpenAI, Anthropic, Google Gemini)
@@ -35,8 +35,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - All-in-one toolkit.py script for streamlined workflow
 
 ### Changed
-- Updated project documentation (Apr 2, 2024)
-- Updated title in README (Mar 2024)
+- Updated project documentation (Apr 2, 2025)
+- Updated title in README (Mar 2025)
 
 ## Types of changes
 - `Added` for new features.
