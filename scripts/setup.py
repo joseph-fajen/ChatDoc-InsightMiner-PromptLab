@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Setup script for the MultiSource-TriLLM-Toolkit
+Setup script for the ChatDoc-InsightMiner-PromptLab
 
 This script verifies and sets up the environment required for the toolkit to function.
 It checks for required directories, Python packages, and configuration files.

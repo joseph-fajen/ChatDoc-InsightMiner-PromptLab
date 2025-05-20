@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Demo script to showcase the MultiSource-TriLLM-Toolkit
+Demo script to showcase the ChatDoc-InsightMiner-PromptLab
 """
 
 import os

@@ -28,6 +28,8 @@ This toolkit allows you to:
 ChatDoc-InsightMiner-PromptLab/
 ├── README.md
 ├── QUICKSTART.md
+├── CONTRIBUTING.md            # Contribution guidelines
+├── CHANGELOG.md              # Version history and changes
 ├── requirements.txt
 ├── .env.example                # Template for API keys and settings
 ├── scripts/
@@ -110,16 +112,28 @@ Targeted prompts for answering specific user questions:
 
 ### Installation
 
-1. Clone this repository
-2. Install requirements:
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/ChatDoc-InsightMiner-PromptLab.git
+   cd ChatDoc-InsightMiner-PromptLab
    ```
+   > Note: Replace `yourusername` with the actual GitHub username or organization name where this repo is hosted.
+
+2. Install requirements:
+   ```bash
    pip install -r requirements.txt
    ```
+
 3. Create a `.env` file from the template:
-   ```
+   ```bash
    cp .env.example .env
    ```
-4. Add your API keys and customize settings in the `.env` file
+
+4. Add your API keys and customize settings in the `.env` file:
+   ```bash
+   # Edit the .env file with your preferred text editor
+   # Add at least one API key (OpenAI, Anthropic, or Google Gemini)
+   ```
 
 ### Quick Setup with the Interactive Wizard
 
@@ -210,7 +224,30 @@ The toolkit works best with all three LLM providers (OpenAI, Anthropic, and Goog
 python scripts/toolkit.py fallback --prompt prompts/your_prompt.txt --provider [openai|anthropic|gemini]
 ```
 
-Choose the provider for which you have an API key.
+Choose the provider for which you have an API key. Each provider has different capabilities and limitations:
+
+### OpenAI Only
+```bash
+python scripts/toolkit.py fallback --prompt prompts/your_prompt.txt --provider openai
+```
+- Uses the model specified by `OPENAI_MODEL` in your `.env` file (defaults to gpt-4o)
+- Good for general analysis and documentation generation
+
+### Anthropic Only
+```bash
+python scripts/toolkit.py fallback --prompt prompts/your_prompt.txt --provider anthropic
+```
+- Uses the model specified by `ANTHROPIC_MODEL` in your `.env` file (defaults to claude-3-opus-20240229)
+- Excels at detailed analysis and complex reasoning
+
+### Gemini Only
+```bash
+python scripts/toolkit.py fallback --prompt prompts/your_prompt.txt --provider gemini
+```
+- Uses the model specified by `GEMINI_MODEL` in your `.env` file (defaults to gemini-1.5-pro)
+- Good for creative content and technical documentation
+
+You will still need to set up the vector database with your chat data and documentation even when using fallback mode.
 
 ## Troubleshooting
 
@@ -248,4 +285,8 @@ The test suite includes:
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details. The Apache License 2.0 allows you to freely use, modify, distribute, and sublicense this code, while providing an express grant of patent rights from contributors to users.
+
+## Contributing
+
+Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute to this project. We maintain a [CHANGELOG.md](CHANGELOG.md) to track versions and document changes.

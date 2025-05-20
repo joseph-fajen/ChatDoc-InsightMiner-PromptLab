@@ -1,26 +1,22 @@
 # Core dependencies
-pandas>=2.0.0
-python-dotenv>=0.21.0
-tqdm>=4.64.0
+pandas>=2.2.0
+python-dotenv>=0.22.0
+tqdm>=4.66.1
 
 # Vector database and embeddings
-chromadb>=0.4.18
-sentence-transformers>=2.2.0
-huggingface-hub>=0.12.0
-numpy>=1.24.0
-transformers>=4.29.0
-tokenizers>=0.13.3
+chromadb>=0.4.22
+sentence-transformers>=2.2.2
 
 # LLM APIs
-anthropic>=0.6.0
-openai>=1.0.0
-google-generativeai>=0.3.0
+anthropic>=0.18.0
+openai>=1.12.0
+google-generativeai>=0.4.0
 
 # Async and HTTP
-aiohttp>=3.8.0
+aiohttp>=3.9.1
 asyncio>=3.4.3
 
-# Utilities
-jupyter>=1.0.0
-matplotlib>=3.7.0
-plotly>=5.13.0
+# Optional: Data visualization (only if you plan to use these features)
+# jupyter>=1.0.0
+# matplotlib>=3.8.2
+# plotly>=5.18.0

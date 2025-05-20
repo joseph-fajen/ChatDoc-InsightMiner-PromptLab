@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-MultiSource-TriLLM-Toolkit - All-in-one script
+ChatDoc-InsightMiner-PromptLab - All-in-one script
 
 This script provides a unified interface to all toolkit functionality:
 - Setting up the environment
@@ -317,7 +317,7 @@ def run_single_llm_fallback(prompt_file, provider):
 
 def run_wizard():
     """Run an interactive setup wizard"""
-    print_header("MultiSource-TriLLM-Toolkit Setup Wizard")
+    print_header("ChatDoc-InsightMiner-PromptLab Setup Wizard")
     print("This wizard will guide you through setting up and using the toolkit.")
     
     # Check environment setup
@@ -340,49 +340,113 @@ def run_wizard():
     
     if missing_keys:
         print(f"\n{YELLOW}Warning: Missing or default API keys for: {', '.join(missing_keys)}{NC}")
-        print("You can continue, but some functionality will be limited.")
+        print("You can continue with limited functionality using fallback mode with a single LLM provider.")
+        print("Here are your options based on available API keys:")
         
-        answer = input("Would you like to add these API keys now? (y/n): ")
+        available_providers = []
+        if "OpenAI" not in missing_keys:
+            available_providers.append("openai")
+            print(f"- {GREEN}OpenAI{NC}: Available (use with `fallback --provider openai`)")
+        else:
+            print(f"- {RED}OpenAI{NC}: Not available")
+            
+        if "Anthropic" not in missing_keys:
+            available_providers.append("anthropic")
+            print(f"- {GREEN}Anthropic{NC}: Available (use with `fallback --provider anthropic`)")
+        else:
+            print(f"- {RED}Anthropic{NC}: Not available")
+            
+        if "Gemini" not in missing_keys:
+            available_providers.append("gemini")
+            print(f"- {GREEN}Gemini{NC}: Available (use with `fallback --provider gemini`)")
+        else:
+            print(f"- {RED}Gemini{NC}: Not available")
+        
+        if not available_providers:
+            print(f"\n{RED}No API keys are currently available.{NC}")
+        else:
+            print(f"\n{GREEN}You can use fallback mode with: {', '.join(available_providers)}{NC}")
+            
+        answer = input("\nWould you like to add or update API keys now? (y/n): ")
         if answer.lower() == 'y':
             env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env")
             
-            if "OpenAI" in missing_keys:
-                openai_key = input("Enter your OpenAI API key (or press Enter to skip): ")
-                if openai_key.strip():
-                    with open(env_path, "r") as f:
-                        content = f.read()
-                    content = re.sub(r'OPENAI_API_KEY=.*', f'OPENAI_API_KEY={openai_key}', content)
+            # Create .env file if it doesn't exist yet
+            if not os.path.exists(env_path):
+                env_example = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env.example")
+                if os.path.exists(env_example):
+                    with open(env_example, "r") as src, open(env_path, "w") as dst:
+                        dst.write(src.read())
+                    print(f"{GREEN}Created .env file from .env.example{NC}")
+                else:
                     with open(env_path, "w") as f:
-                        f.write(content)
+                        f.write("# API Keys\n")
+                        f.write("OPENAI_API_KEY=\n")
+                        f.write("ANTHROPIC_API_KEY=\n")
+                        f.write("GEMINI_API_KEY=\n")
+                    print(f"{GREEN}Created new .env file{NC}")
+            
+            # Helper function to safely update .env file
+            def update_env_key(key_name, key_value):
+                if not key_value.strip():
+                    return False
+                    
+                with open(env_path, "r") as f:
+                    env_lines = f.readlines()
+                
+                key_pattern = f"{key_name}="
+                key_exists = False
+                
+                for i, line in enumerate(env_lines):
+                    if line.startswith(key_pattern):
+                        env_lines[i] = f"{key_name}={key_value}\n"
+                        key_exists = True
+                        break
+                
+                if not key_exists:
+                    env_lines.append(f"{key_name}={key_value}\n")
+                
+                with open(env_path, "w") as f:
+                    f.writelines(env_lines)
+                    
+                return True
+            
+            if "OpenAI" in missing_keys:
+                print(f"\n{BLUE}For OpenAI:{NC}")
+                print("Get your API key from: https://platform.openai.com/api-keys")
+                openai_key = input("Enter your OpenAI API key (or press Enter to skip): ")
+                if update_env_key("OPENAI_API_KEY", openai_key):
+                    os.environ["OPENAI_API_KEY"] = openai_key
+                    available_providers.append("openai")
             
             if "Anthropic" in missing_keys:
+                print(f"\n{BLUE}For Anthropic:{NC}")
+                print("Get your API key from: https://console.anthropic.com/settings/keys")
                 anthropic_key = input("Enter your Anthropic API key (or press Enter to skip): ")
-                if anthropic_key.strip():
-                    with open(env_path, "r") as f:
-                        content = f.read()
-                    content = re.sub(r'ANTHROPIC_API_KEY=.*', f'ANTHROPIC_API_KEY={anthropic_key}', content)
-                    with open(env_path, "w") as f:
-                        f.write(content)
+                if update_env_key("ANTHROPIC_API_KEY", anthropic_key):
+                    os.environ["ANTHROPIC_API_KEY"] = anthropic_key
+                    available_providers.append("anthropic")
             
             if "Gemini" in missing_keys:
+                print(f"\n{BLUE}For Google Gemini:{NC}")
+                print("Get your API key from: https://aistudio.google.com/app/apikey")
                 gemini_key = input("Enter your Gemini API key (or press Enter to skip): ")
-                if gemini_key.strip():
-                    with open(env_path, "r") as f:
-                        content = f.read()
-                    content = re.sub(r'GEMINI_API_KEY=.*', f'GEMINI_API_KEY={gemini_key}', content)
-                    with open(env_path, "w") as f:
-                        f.write(content)
+                if update_env_key("GEMINI_API_KEY", gemini_key):
+                    os.environ["GEMINI_API_KEY"] = gemini_key
+                    available_providers.append("gemini")
+            
+            # Remove duplicates
+            available_providers = list(set(available_providers))
             
             # Reload .env file
             load_dotenv(override=True)
             
-            # Explicitly set environment variables
-            if "OpenAI" in missing_keys and 'openai_key' in locals() and openai_key.strip():
-                os.environ["OPENAI_API_KEY"] = openai_key
-            if "Anthropic" in missing_keys and 'anthropic_key' in locals() and anthropic_key.strip():
-                os.environ["ANTHROPIC_API_KEY"] = anthropic_key
-            if "Gemini" in missing_keys and 'gemini_key' in locals() and gemini_key.strip():
-                os.environ["GEMINI_API_KEY"] = gemini_key
+            if available_providers:
+                print(f"\n{GREEN}API keys updated. You can now use these providers: {', '.join(available_providers)}{NC}")
+                print("You can run analysis with all available providers or use fallback mode with a single provider.")
+            else:
+                print(f"\n{YELLOW}No API keys were added. You'll need at least one to perform analyses.{NC}")
+                print("You can still build vector databases and prepare your data.")
     
     # Check for chat data
     print("\nStep 2: Checking for chat data...")
@@ -495,7 +559,7 @@ def run_demo(args):
     # Record start time
     start_time = time.time()
     
-    print_header("MultiSource-TriLLM-Toolkit Demo")
+    print_header("ChatDoc-InsightMiner-PromptLab Demo")
     print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     
     # Verify environment
@@ -568,7 +632,7 @@ def convert_markdown(args):
 def main():
     """Main entry point for the toolkit"""
     parser = argparse.ArgumentParser(
-        description="MultiSource-TriLLM-Toolkit - All-in-one interface",
+        description="ChatDoc-InsightMiner-PromptLab - All-in-one interface",
         formatter_class=argparse.RawDescriptionHelpFormatter
     )
     

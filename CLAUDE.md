@@ -6,6 +6,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ChatDoc InsightMiner PromptLab is a Python toolkit for analyzing multiple data sources (chat messages and documentation) using vector databases and comparative LLM evaluation. The toolkit builds vector databases from chat data and documentation, queries them with specialized prompts, and compares responses from multiple LLMs (OpenAI, Anthropic, and Google Gemini).
 
+## Prerequisites
+
+- Python 3.9+
+- API keys for OpenAI, Anthropic, and Google Gemini (for multi-LLM features)
+
 ## Commands
 
 ### Setting Up
@@ -66,6 +71,45 @@ python scripts/toolkit.py analyze --batch --prompts-dir prompts/analysis_prompts
 python scripts/toolkit.py demo
 ```
 
+#### Fallback Mode for Missing API Keys
+
+If you don't have all three API keys, you can use fallback mode with a single provider:
+
+```bash
+# OpenAI fallback
+python scripts/toolkit.py fallback --prompt prompts/analysis_prompts/technical_issues.txt --provider openai
+
+# Anthropic fallback
+python scripts/toolkit.py fallback --prompt prompts/analysis_prompts/technical_issues.txt --provider anthropic
+
+# Gemini fallback
+python scripts/toolkit.py fallback --prompt prompts/analysis_prompts/technical_issues.txt --provider gemini
+```
+
+The toolkit will use the model specified in your `.env` file for the selected provider:
+- `OPENAI_MODEL` defaults to "gpt-4o"
+- `ANTHROPIC_MODEL` defaults to "claude-3-opus-20240229"
+- `GEMINI_MODEL` defaults to "gemini-1.5-pro"
+
+### Creating Custom Prompts
+
+You can create your own custom prompts by adding text files to the appropriate directories:
+
+1. Create a new `.txt` file in one of the prompt directories:
+   - `prompts/analysis_prompts/` for general analysis
+   - `prompts/creative_discovery_prompts/` for exploratory analysis
+   - `prompts/faq_prompts/` for FAQ generation
+   - `prompts/prompt_for_specific_question/` for targeted inquiries
+
+2. Structure your prompt with clear instructions for the LLMs
+
+3. Use the `{conversations}` placeholder to reference retrieved content
+
+4. Run your analysis:
+   ```bash
+   python scripts/toolkit.py analyze --prompt path/to/your/prompt.txt
+   ```
+
 ## Architecture
 
 The project has a modular architecture with the following key components:
@@ -103,3 +147,27 @@ The project has a modular architecture with the following key components:
 2. **Chat Data Format**: CSV with columns: timestamp, username, message
 3. **Documentation Format**: Markdown/MDX files with sections
 4. **Output Files**: Results are saved to the outputs/ directory
+
+## Testing
+
+Run all tests in the project:
+```bash
+python tests/run_tests.py
+```
+
+Run a specific test file:
+```bash
+python tests/test_md_to_csv_converter.py
+```
+
+Run a specific test case:
+```bash
+python -m unittest tests.test_md_to_csv_converter.TestMarkdownToCsvConverter.test_single_file_conversion
+```
+
+## Troubleshooting
+
+If you encounter issues:
+1. Check the log files in the `logs/` directory for detailed error messages
+2. Ensure all API keys are correctly set in the `.env` file
+3. Verify that input data (chat data and documentation) is in the correct format
